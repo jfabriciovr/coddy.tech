@@ -1,18 +1,6 @@
 ```
-Arrays have many many methods (functionalities).
-    push, pop, shift, unshift, splice, slice, concat, join, reverse, sort, indexOf, lastIndexOf, includes, find, findIndex, filter, map, reduce, forEach, every, some.
-
-    -push: adds one or more elements to the end of an array and returns the new length of the array.
-    -pop: removes the last element from an array and returns that element.
-    -shift: removes the first element from an array and returns that element.
-    -unshift: adds one or more elements to the beginning of an array and returns the new length of the array.
-
-``````
-CHALENGE:
-
 Create a function named swapEnds that recieves one argument: an array.
 The function should swap the first and last elements of the array and return the modified array. If the array has fewer than two elements, it should return the array unchanged.
-
 ```;
 
 function swapEnds(arr) {
@@ -32,3 +20,29 @@ console.log(swapEnds([1])); // [1]
 console.log(swapEnds([])); // []
 console.log(swapEnds(["a", "b", "c"])); // ['c', 'b', 'a']
 console.log(swapEnds([true, false])); // [false, true]
+
+```
+Create a function named findElement that receives two arguments:
+
+    An array of numbers
+    A number to search for
+
+The function should do the following:
+
+    Check if the array includes the number using the includes method.
+    If the number is found, return the index of its first occurrence using the indexOf method.
+    If the number is not found, return -1.
+
+For example:
+
+    findElement([1, 2, 3, 4, 5], 3) should return 2
+    findElement([1, 2, 3, 4, 5], 6) should return -1
+```;
+
+function findElement(arr, num) {
+  if (arr.includes(num)) {
+    return arr.indexOf(num);
+  } else {
+    return -1;
+  }
+}
