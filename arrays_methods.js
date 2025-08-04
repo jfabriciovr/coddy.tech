@@ -71,7 +71,7 @@ function processArray(arr) {
   arr.sort();
   if (arr.includes(5)) {
     index = arr.indexOf(5);
-    sorted[index] = 50;
+    arr[index] = 50;
   }
   return sorted.reverse();
 }
@@ -87,3 +87,22 @@ function processArray(arr) {
   arr.reverse();
   return arr;
 }
+
+```
+ITERATING OVER ARRAYS
+
+Create a program that receives an array
+of strings as input (given), and prints 
+a new array containing only the words longer
+than 5 characters
+```;
+let arr = ["apple", "banana", "cherry", "date", "elderberry", "fig", "grape"];
+//let arr = inp.split(", "); // Don't change this line
+
+let newArr = [];
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i].length > 5) {
+    newArr.push(arr[i]);
+  }
+}
+console.log(newArr);
