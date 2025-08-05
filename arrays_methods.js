@@ -106,3 +106,104 @@ for (let i = 0; i < arr.length; i++) {
   }
 }
 console.log(newArr);
+```
+The forEach method allows you to loop through a sequence (like an array) while keeping track of each item.
+
+Without forEach we would access both the index and the value the following way:
+
+let fruits = ["apple", "banana", "orange"];
+for (let i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}
+
+forEach is a more elegant way to get both index and value:
+
+let fruits = ["apple", "banana", "orange"];
+fruits.forEach((fruit, index) => {
+      console.log(Index ${index}: ${fruit});
+});
+
+Both examples will output:
+
+Index 0: apple
+Index 1: banana
+Index 2: orange
+
+```;
+//let arr = inp.split(", ").map(Number); // Don't change this line
+
+let newArray = [];
+arr.forEach((num, index) => {
+  if (num < 50 || num % 5 === 0) {
+    newArray.push(num);
+  }
+});
+console.log(newArray);
+
+```
+for...of Loop
+
+The for...of loop provides a simple way to iterate over the values of iterable objects, such as arrays, strings, maps, sets, and more. It combines the conciseness of forEach with the ability to break and continue.
+
+Here's the basic syntax of a for...of loop:
+
+for (const element of iterable) {
+    // Code to be executed for each element
+}
+
+    element: On each iteration, the next value from the iterable object is assigned to this variable.
+    iterable: The object whose elements are being iterated over (e.g., an array or a string).
+
+Here's an example with an array:
+
+const fruits = ["apple", "banana", "orange"];
+
+for (const fruit of fruits) {
+    console.log(fruit);
+}
+
+Output:
+
+apple
+banana
+orange
+
+Here's another example with a string:
+
+const text = "hello";
+
+for (const char of text) {
+    console.log(char);
+}
+
+Output:
+
+h
+e
+l
+l
+o
+
+Compared to traditional for loops or the forEach method, for...of offers a more straightforward syntax for many common use cases, especially when you don't need the index of each element.
+``````
+CHALLENGE:
+
+Write a function named countVowels that takes a string as an argument and returns the number of vowels (a, e, i, o, u) in the string. Use a for...of loop to iterate over the characters of the string.
+
+For example:
+
+    countVowels("hello") should return 2
+    countVowels("javascript") should return 3
+
+    Count also upper letters!
+```;
+function countVowels(str) {
+  let count = 0;
+  let vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+  for (let char of str) {
+    if (vowels.includes(char)) {
+      count++;
+    }
+  }
+  return count;
+}
