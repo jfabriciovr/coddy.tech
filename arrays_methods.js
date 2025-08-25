@@ -207,3 +207,21 @@ function countVowels(str) {
   }
   return count;
 }
+
+```
+Create a program that receives a string as input (given), and it prints how many times the character p is in the string.
+
+Some chars might be upper cased, use char.toLoweCase() to convert it to lowe cased.
+```;
+
+function countP(text) {
+  let count = 0;
+  for (const char of text) {
+    if (char.toLoweCase() === "p") {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log(countP("Paralelepipedo")); // 3
