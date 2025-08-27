@@ -337,3 +337,80 @@ console.log(numbers.slice(0, 3));
 // Step 4: Use splice() to replace the second element with 99 and print the modified array
 numbers.splice(1, 1, 99);
 console.log(numbers);
+
+```
+Array Methods Part 4
+
+map(callback), filter(callback), reduce(callback, initialValue)
+
+```/*
+1. map(callback): Creates a new array populated with the results of calling a provided function on every element in the calling array.
+
+let numbers = [1, 2, 3];
+let doubled = numbers.map(num => num * 2);
+console.log(doubled); // Output: [2, 4, 6]
+
+2. filter(callback): Creates a new array with all elements that pass the test implemented by the provided function.
+
+let numbers = [1, 2, 3, 4, 5];
+let evenNumbers = numbers.filter(num => num % 2 === 0);
+console.log(evenNumbers); // Output: [2, 4]
+
+3. reduce(callback, initialValue): Executes a reducer function on each element of the array, resulting in a single output value.
+
+let numbers = [1, 2, 3, 4];
+let sum = numbers.reduce((acc, num) => acc + num, 0);
+console.log(sum); // Output: 10
+*/ ```Challenge Easy ```;
+/*
+You are given an array numbers = [1, 2, 3, 4, 5]. Perform the following steps and print the results directly:
+
+    Use map() to create a new array where each number is multiplied by 3, and print the result.
+    Use filter() to create a new array that only includes numbers greater than 3, and print the result
+*/
+
+let numbersArray = [1, 2, 3, 4, 5];
+
+console.log(numbersArray.map((num) => num * 3)); // [3, 6, 9, 12, 15]
+console.log(numbersArray.filter((num) => num > 3)); // [4, 5]
+
+```Membership Testing``` /*
+You can check whether an element is in an array or not using the indexOf() method:
+
+const arr = ["a", "b", "c"];
+console.log(arr.indexOf("b")); // Output: 1
+console.log(arr.indexOf("d")); // Output: -1
+
+If the element is not found, indexOf() returns -1.
+
+    You can also use the includes() method that was learned before!
+*/```Challenge```;
+/*
+
+Create a program that receives two arrays of numbers as input 
+and prints new array of all elements that are in the first array but NOT in the second array
+
+*/
+
+let arr1 = [1, 2, 3, 4, 5];
+let arr2 = [3, 4, 6];
+// Output: [1, 2, 5]
+
+// ----- my solution
+let arr3 = [];
+for (let num of arr1) {
+  if (arr2.indexOf(num) === -1) {
+    arr3.push(num);
+  }
+}
+console.log(arr3);
+
+// ------ coddy's solution
+
+let result = [];
+for (let i = 0; i < arr1.length; i++) {
+  if (!arr2.includes(arr1[i])) {
+    result.push(arr1[i]);
+  }
+}
+console.log(result);
