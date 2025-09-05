@@ -40,10 +40,31 @@ function removeItem(item) {
 	}
 }
     */
-addItem("Milk"); // Milk added to the grocery list.
-addItem("Bread"); // Bread added to the grocery list.
-addItem("Eggs"); // Eggs added to the grocery list.
-removeItem("Bread"); // Bread removed from the grocery list.
-removeItem("Cheese"); // Cheese is not in the grocery list.
 
-console.log(groceryList); // ['Milk', 'Eggs']
+/*
+Now, add a function named viewList that gets no arguments and prints the grocery list
+*/
+function viewList() {
+  if (groceryList.lenth === 0) {
+    console.log("The grocery list is empty");
+  } else {
+    console.log("Grocery List:");
+    /* my solution*/
+    /*
+    for (let counter = 1, i = 0; i < groceryList.length; i++, counter++) {
+      console.log(`${counter}. ${groceryList[i]}`);
+    }
+    */
+    /* coddy's solution */
+    groceryList.forEach((item, index) => console.log(`${index + 1}. ${item}`));
+  }
+}
+
+viewList();
+addItem("Milk");
+addItem("Bread");
+addItem("Eggs");
+viewList();
+removeItem("Bread");
+viewList();
+removeItem("Cheese");
