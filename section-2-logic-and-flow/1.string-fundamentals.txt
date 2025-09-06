@@ -1,0 +1,29 @@
+String Fundamentals
+
+In JavaScript, strings are immutable. 
+This means that once a string is created, its value cannot be changed. 
+Any operation that appears to modify a string actually creates a new string.
+
+Here's an example:
+
+let str = "Hello";
+str[0] = "h"; // This doesn't work
+console.log(str); // Still outputs "Hello"
+
+When you perform operations on strings, you're creating new strings:
+
+let str = "Hello";
+let newStr = str + " World";
+console.log(str);     // "Hello"
+console.log(newStr);  // "Hello World"
+
+While strings and arrays are different data types, they share many similar methods. For example, both support methods like:
+
+    includes()
+    indexOf()
+    length
+    slice()
+
+However, remember that unlike arrays, strings are immutable, 
+so methods that modify arrays (like push() or pop()) don't exist for strings.
+
