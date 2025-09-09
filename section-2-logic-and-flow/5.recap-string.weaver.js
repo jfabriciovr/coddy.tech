@@ -11,35 +11,25 @@ Return the final string
 
 */
 
-function stringWeaverFab(str1, str2) {
+function stringWeaver(str1, str2) {
   const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
   const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-  // Write your code here
-  let newStr1 = "";
-  let newStr2 = "";
+  // remove numbers from both strings Fabs version
+  let cleanStr1 = "";
+  let cleanStr2 = "";
   for (char of str1) {
     if (!numbers.includes(char)) {
-      newStr1 += char;
+      cleanStr1 += char;
     }
   }
   for (char of str2) {
     if (!numbers.includes(char)) {
-      newStr2 += char;
+      cleanStr2 += char;
     }
   }
-  console.log(newStr1);
-  console.log(newStr2);
-}
 
-stringWeaverFab("h2ello", "w1orld");
-
-/* coddy's solution */
-
-function stringWeaver(str1, str2) {
-  const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
-  const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-
-  // Remove numbers from both strings
+  // Remove numbers from both strings coddy's version
+  /*
   let cleanStr1 = "";
   let cleanStr2 = "";
 
@@ -54,7 +44,7 @@ function stringWeaver(str1, str2) {
       cleanStr2 += str2[i];
     }
   }
-
+*/
   let result = "";
   let i = 0;
 
@@ -82,6 +72,9 @@ function stringWeaver(str1, str2) {
     cleanStr1.length > cleanStr2.length
       ? cleanStr1.slice(i)
       : cleanStr2.slice(i);
+
+  console.log("Remaining characters:", remaining);
+
   for (let j = 0; j < remaining.length; j++) {
     let char = remaining[j];
     if (vowels.includes(char)) {
@@ -93,4 +86,4 @@ function stringWeaver(str1, str2) {
   return result;
 }
 
-console.log(stringWeaver("h2ello", "w1orld")); // output: hwEOlrllOd
+console.log(stringWeaver("h2ello", "w1orldert")); // output: hwEOlrllOd
