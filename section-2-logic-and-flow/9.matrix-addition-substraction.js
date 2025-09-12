@@ -5,9 +5,15 @@ Create a function named combineMatrices that takes
 three arguments:
 
 matrixA, matrixB, and a string op which can be either
-"+" or "-". For each cell, if op is "+", the result
-should be matrixA[r][c] + matrixB[r][c]. 
-Otherwise, if matrixA[r][c] - matrixB[r][c]
+"+" or "-". 
+
+For each cell, if op is "+", the result should be:
+
+matrixA[r][c] + matrixB[r][c]. 
+
+if op is "-", the result should be: 
+
+matrixA[r][c] - matrixB[r][c]
 
 */
 
@@ -45,7 +51,9 @@ console.log(
   )
 );
 // Output:
-// [ [ 6, 8 ], [ 10, 12 ] ]
+// [
+// [ 6, 8 ],
+// [ 10, 12 ] ]
 
 console.log(
   combineMatrices(
